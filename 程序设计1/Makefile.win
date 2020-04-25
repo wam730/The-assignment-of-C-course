@@ -1,0 +1,28 @@
+# Project: 实验一 3 球体表面积
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Untitled1.o
+LINKOBJ  = Untitled1.o
+LIBS     = -L"D:/软件安装/Dev-Cpp/MinGW64/lib" -L"D:/软件安装/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/软件安装/Dev-Cpp/MinGW64/include" -I"D:/软件安装/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/软件安装/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/软件安装/Dev-Cpp/MinGW64/include" -I"D:/软件安装/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/软件安装/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/软件安装/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "实验一 3 球体表面积与体积.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Untitled1.o: Untitled1.c
+	$(CC) -c Untitled1.c -o Untitled1.o $(CFLAGS)

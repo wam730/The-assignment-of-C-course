@@ -1,0 +1,28 @@
+# Project: 测试程序
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 测试程序.o
+LINKOBJ  = 测试程序.o
+LIBS     = -L"D:/软件安装目录/Dev-Cpp/MinGW64/lib" -L"D:/软件安装目录/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/软件安装目录/Dev-Cpp/MinGW64/include" -I"D:/软件安装目录/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/软件安装目录/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/软件安装目录/Dev-Cpp/MinGW64/include" -I"D:/软件安装目录/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/软件安装目录/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/软件安装目录/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 测试程序.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+测试程序.o: 测试程序.cpp
+	$(CPP) -c 测试程序.cpp -o 测试程序.o $(CXXFLAGS)
